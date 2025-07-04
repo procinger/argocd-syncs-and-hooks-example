@@ -5,7 +5,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "5"
   labels:
-    version: "5"
+    version: "6"
 spec:
   selector:
     matchLabels:
