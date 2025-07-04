@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nginx
   labels:
-    version: "4"
+    version: "5"
 spec:
   selector:
     matchLabels:

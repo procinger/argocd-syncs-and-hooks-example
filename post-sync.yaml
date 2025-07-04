@@ -16,4 +16,4 @@ spec:
           command: ["bash"]        # example command simulating a bug which triggers the FailJob action
           args:
             - -c
-            - echo "Hello postSync!" && sleep 30
+            - echo "Hello postSync!" && exit 1
