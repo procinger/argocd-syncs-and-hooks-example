@@ -3,11 +3,11 @@ kind: Job
 metadata:
   name: post-sync
   annotations:
-    argocd.argoproj.io/sync-wave: "10"
-    argocd.argoproj.io/sync-options: Replace=true
-    #argocd.argoproj.io/hook: PostSync
+    #argocd.argoproj.io/sync-wave: "10"
+    #argocd.argoproj.io/sync-options: Replace=true
+    argocd.argoproj.io/hook: PostSync
   labels:
-    version: "9"
+    version: "10"
 spec:
   backoffLimit: 1
   activeDeadlineSeconds: 120
@@ -20,4 +20,4 @@ spec:
           command: ["bash"]        # example command simulating a bug which triggers the FailJob action
           args:
             - -c
-            - echo "Hello postSync!" && exit 1
+            - echo "Hello postSync!" && sleep 5 && exit 1

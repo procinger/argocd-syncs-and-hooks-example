@@ -3,10 +3,10 @@ kind: Job
 metadata:
   name: pre-sync
   annotations:
-    argocd.argoproj.io/sync-options: Replace=true
-    #argocd.argoproj.io/hook: PreSync
+    #argocd.argoproj.io/sync-options: Replace=true
+    argocd.argoproj.io/hook: PreSync
   labels:
-    version: "9"
+    version: "10"
 spec:
   backoffLimit: 1
   activeDeadlineSeconds: 120
@@ -19,4 +19,4 @@ spec:
           command: ["bash"]        # example command simulating a bug which triggers the FailJob action
           args:
             - -c
-            - echo "Hello preSync!" && sleep 10
+            - echo "Hello preSync!" && sleep 5
